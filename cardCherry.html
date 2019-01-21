@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>CARD GAME</title>
+
+<style type="text/css">
+		body{
+			background-color: Cyan;
+		}
+		#myd1{
+			position: absolute;;
+			left: 15%;
+			/*margin-top: 7%;*/
+			top: 15%;
+			/*width: 25%;*/
+			
+			font-size: 400%;
+    		background-color: Orange;
+    		/*padding-top: 50px;
+    		padding-right: 50px;
+    		padding-bottom: 50px;
+    		padding-left: 50px;*/
+		}
+		#myd2{
+			position: absolute;;
+			left: 70%;
+			/*margin-top: 7%;*/
+			top: 50%;
+			/*width: 25%;*/
+			
+			font-size: 400%;
+    		background-color: Orange;
+    		/*padding-top: 50px;
+    		padding-right: 50px;
+    		padding-bottom: 50px;
+    		padding-left: 50px;*/
+		}
+		#myd3{
+			position: absolute;;
+			left: 15%;
+			/*margin-top: 7%;*/
+			top: 85%;
+			/*width: 25%; */
+			
+			font-size: 400%;
+    		background-color: Orange;
+    		/*padding-top: 50px;
+    		padding-right: 50px;
+    		padding-bottom: 50px;
+    		padding-left: 50px;*/
+		}
+		#myd4{
+			position: absolute;
+			left: 47%;
+			top: 40%;
+			font-size: 1200%;
+    		color:white;
+    		z-index: 9999;
+		}
+		
+		#myd5{
+			position: absolute;
+		    left: 40%;
+			top: 50%;
+		   	font-size: 300%;
+			color:green;
+		    z-index: 9999;
+		}
+		
+		#image1{
+    		position:relative;
+    		top: 15%;
+    		left: 25%;
+		    width: 50%;
+		    animation: rotating;
+		    animation-duration: 15s;
+		    animation-iteration-count: infinite;
+    		/*animation: mymovee 10s infinite;*/
+		}
+		
+		#spiral{
+			background-color: white;
+		}
+		
+		@keyframes rotating {
+		    from {transform:rotate(0deg);}
+		    to {transform:rotate(360deg);}
+		}
+		
+		#b1{
+		  padding: 15px 25px;
+		  font-size: 24px;
+		  text-align: center;
+		  cursor: pointer;
+		  outline: none;
+		  color: #fff;
+		  background-color: #4CAF50;
+		  border: none;
+		  border-radius: 15px;
+		  box-shadow: 0 9px #999;
+		}
+
+		#b1:hover{
+			background-color: black
+		}
+
+		#b1:active {
+		  background-color: red;
+		  box-shadow: 0 8px green;
+		  transform: translateY(4px);
+		}
+		
+		#heading2{
+			font-size:200%;
+			font-style: italic;
+		    position: absolute;
+		    animation-name: example1;
+		    animation-duration: 8s;
+		    animation-iteration-count: infinite;
+		    animation-direction: alternate;
+		}
+		
+		#head1{
+			font-size: 200%;
+			position: relative;
+			text-align: right;
+			top: 25%;
+		}	
+
+		#heading3{
+			height: 70%;
+			width: 40%;
+			background-size: 100% 75%;
+		    background-repeat: no-repeat;
+			position: absolute;
+		    animation-name: example2;
+		    animation-duration: 5s;
+		    animation-iteration-count: 1;
+		    animation-fill-mode: forwards;
+			}
+		#heading4{
+			position: absolute;
+			top: 60%;
+			left: 5%;
+			font-size: 250%;
+		}
+		@keyframes example1 {
+			
+			    0%   {color:red; left:50%; top:15%;}
+			    20%  {color:hotpink; left:50%; top:35%;}
+			    40%  {color:blue; left:20%; top:35%;}
+			    60%  {color:green; left:20%; top:70%;}
+			    80%  {color:green; left:50%; top:70%;}
+			    100%  {color:green; left:50%; top:85%;}
+			    
+			    
+			}
+		
+		@keyframes example2 {
+		    0%   {color:red; left:100%; top:30%;}
+		    100% {color: blue; left:5%; top:30%;}
+		}
+		
+		
+		@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+		
+		#firstHeading{
+		 animation: fadeIn ease-in 1;
+		 animation-fill-mode: forwards;
+		 animation-duration: 1s;
+		}
+		
+		#m1{
+		 animation: fadeIn ease-in 1;
+		 animation-fill-mode: forwards;
+		 animation-duration: 4s;
+		}
+		
+		#choose{
+		 animation: fadeIn ease-in 1;
+		 animation-fill-mode: forwards;
+		 animation-duration: 8s;
+		}
+		
+		#choose2{
+		 animation: fadeIn ease-in 1;
+		 animation-fill-mode: forwards;
+		 animation-duration: 8s;
+		}
+		
+		#list{
+		background-color:yellow;
+		 animation: fadeIn ease-in 1;
+		 animation-fill-mode: forwards;
+		 animation-duration: 8s;
+		}
+		
+		#b1{
+		 animation: fadeIn ease-in 1;
+		 animation-fill-mode: forwards;
+		 animation-duration: 16s;
+		}
+		
+		.shake-crazy {
+			position: absolute;
+			top: 40%;
+			left: 20%;
+			font-size: 400%;
+		  	display: inline-block;
+		  	transform-origin: center center;
+		   }
+
+		.shake-freeze,
+		.shake-constant.shake-constant--hover,
+		.shake-trigger .shake-constant.shake-constant--hover {
+		  animation-play-state: paused; }
+
+		.shake-freeze,
+		.shake-trigger .shake-freeze, .shake-crazy,
+		.shake-trigger .shake-crazy {
+		  animation-play-state: running; }
+
+		@keyframes shake-crazy {
+		  10% {
+		  	color: darkred;
+		    transform: translate(19px, -6px) rotate(10deg);
+		    opacity: 0.2; }
+		  20% {
+		    transform: translate(-8px, -5px) rotate(2deg);
+		    opacity: 0.12; }
+		  30% {
+		    transform: translate(-19px, 4px) rotate(-5deg);
+		    opacity: 0.46; }
+		  40% {
+		    transform: translate(11px, 10px) rotate(2deg);
+		    opacity: 0.84; }
+		  50% {
+		    transform: translate(-3px, -18px) rotate(-5deg);
+		    opacity: 1; }
+		  60% {
+		  	color: blue;
+		    transform: translate(1px, 17px) rotate(-4deg);
+		    opacity: 0.29; }
+		  70% {
+		    transform: translate(10px, -9px) rotate(-9deg);
+		    opacity: 0.9; }
+		  80% {
+		    transform: translate(5px, 1px) rotate(-8deg);
+		    opacity: 0.07; }
+		  90% {
+		  	color: darkred;
+		    transform: translate(-6px, -3px) rotate(8deg);
+		    opacity: 0.37; }
+		  0%, 100% {
+		    transform: translate(0, 0) rotate(0); } }
+
+		.shake-crazy,
+		.shake-trigger .shake-crazy,
+		.shake-crazy.shake-freeze,
+		.shake-crazy.shake-constant {
+		  animation: shake-crazy 750ms ease-in-out infinite; }
+		</style>
+
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<link rel="stylesheet" type="text/css" href="csshake.min.css">
+
+
+	<script type="text/javascript">
+		var arr1=[1,4,7,10,13];
+		var arr2=[2,5,8,11,14];
+		var arr3=[3,6,9,12,15];
+		var final2=[];
+		var arg=0;
+		
+		$(document).ready(function(){
+			$("#restart").hide()
+			$("#image1").hide()
+			$("#image2").hide()
+			$("#myd1").hide()
+			$("#myd2").hide()
+			$("#myd3").hide()
+			$("#myd4").hide();
+			$("#myd5").hide();
+			$(".shake-crazy").hide();
+			$("#heading2").hide();
+			$("#heading3").hide();
+			$("#heading4").hide();
+			var count=0;
+			$(".d").click(function(event){
+				event.preventDefault();
+				$("#m1").hide();
+				$("button").hide()
+				$("#myd1").show()
+				$("#myd2").show()
+				$("#myd3").show()
+				if($(this).attr("id")=="myd1"){
+					value=1
+				}
+				else if($(this).attr("id")=="myd2"){
+					value=2
+				}
+				else if($(this).attr("id")=="myd3"){
+					value=3
+				}
+				
+				var final1=[arr1,arr2,arr3,value,final2,arg];
+				var combined=JSON.stringify(final1);
+				console.log(final1);
+				$.ajax({url: "first",data:{"temp":combined},success: function(result){
+					console.log("up")
+					console.log(arr1)
+					console.log("down")
+					count=count+1;
+					obj=JSON.parse(result)
+					console.log(obj)
+					arr1=[]
+					arr2=[]
+					arr3=[]	
+					arr4=[]
+			        arr5=[]
+			        arr6=[]
+					for(i=0;i<5;i++){
+						arr1.push(obj[i])
+						arr2.push(obj[i+5])
+						arr3.push(obj[i+10])
+						arr4.push(obj[i+15])
+						arr5.push(obj[i+20])
+						arr6.push(obj[i+25])
+					}
+					if(count!==3){
+						if(count==1){
+							$("#heading2").hide();
+							$("#image2").fadeIn()
+							$("#heading3").fadeIn();
+						}
+						else if(count==2){
+							$("#image2").hide()
+							$("#heading3").hide();
+							$(".shake-crazy").fadeIn();
+							$("#heading4").fadeIn();
+						}
+						if(value==1){
+							$("#myd2").toggle("explode");
+							$("#myd3").toggle("explode");
+							$("#myd1").effect( "size", {to: { width: 200, height: 60 }}, 1000 );
+						}
+						else if(value==2){
+							$("#myd1").toggle("explode");
+							$("#myd3").toggle("explode");
+							$("#myd2").effect( "size", {to: { width: 200, height: 60 }}, 1000 );
+						}
+						else{
+							$("#myd2").toggle("explode");
+							$("#myd1").toggle("explode");
+							$("#myd3").effect( "size", {to: { width: 200, height: 60 }}, 1000 );
+						}
+						
+				        $("#myd1").show().text(arr4);
+						$("#myd2").show().text(arr5);
+						$("#myd3").show().text(arr6);
+						
+					}
+					else{
+						$("#image1").fadeIn()
+						$("#heading4").hide();
+						$(".shake-crazy").hide();
+						$("#myd5").delay(3000).fadeIn();
+						$("#myd5").delay(2000).fadeOut();
+						$("#image1").delay(7000).fadeOut()
+						$("#myd4").delay(7000).fadeIn();
+						$("#myd4").delay(10000).fadeOut();
+						$("#myd4").html("<b>"+arr2[2] );
+						$("#myd1").hide();
+						$("#myd2").hide();
+						$("#myd3").hide();
+						$("#sub").hide();
+						$("#b1").hide();
+						$("h1").hide();
+						$("h2").hide();
+						$("h3").hide();
+						$("#txt").hide();
+					}
+				}})
+			})
+			$("#b1").click(function(){
+				$("#heading2").fadeIn();
+				$("#choose").hide()
+				$("#choose2").hide()
+				$("h1").hide()
+				$.ajax({url: "second",success: function(result){
+					$("button").hide()
+					$("#m1").hide();
+			        obj=JSON.parse(result)
+			        arr1=[]
+					arr2=[]
+					arr3=[]
+			        
+					for(i=0;i<5;i++){
+						arr1.push(obj[i])
+						arr2.push(obj[i+5])
+						arr3.push(obj[i+10])
+						
+					}
+			        $("#myd1").show()
+					$("#myd2").show()
+					$("#myd3").show()
+					console.log(arr1)
+			        $("#myd1").text(arr1);
+					$("#myd2").text(arr2);
+					$("#myd3").text(arr3);
+				}})
+			})
+			$(".d").click(function(){
+				$(".d").not(this).toggle("explode");
+				})
+			})
+		
+		
+	
+	</script>
+</head>
+<body>
+
+	<h1 id="firstHeading">Hello </h1>
+	<h2 id="m1" class="d3"></h2>
+	<h3 id="choose">I am Guess Master <br> My job is to guess your number</h3>
+	<h3 id="choose2">Below is a list of 15 numbers <br>Kindly memorize a number </h3>
+	<h2 id="list">1,2,3,4,5,6,7,8,9,10,11,12,13,14,15</h2>
+	<div id="heading2">Now click on the block in which your number is</div>
+	<div id="heading3">
+		<h2 id="head1">Keep Calm and Click again</h2>
+	</div>
+	<div class="shake-crazy">BEWARE	</div>
+	<h2 id="heading4">As soon as you click your block, you will be shocked</h2>
+	
+	<button id="b1">Start</button>
+	<div id="mydiv2" class="d"></div>
+	<div id="spiral">
+		<img id="image1" src="http://jclahr.com/science/illusions/spin/spiral_hires.gif">
+	</div>
+	<button id="restart">Play Again</button>
+	<div id="myd1" class="d"></div>
+	<div id="myd2" class="d"></div>
+	<div id="myd3" class="d"></div>
+	<div id="myd4" class="d1"></div>
+	<div id="myd5" class="d2">Keep Staring</div>
+	<script>
+		function time(){
+			var a=new Date();
+			hour=a.getHours();
+			if(hour>=5 && hour<12){
+				return "Good Morning :)"
+			}
+			else if(hour>=12 && hour<16){
+				return "Good Afternoon :)"
+			}
+			else if(hour>=16 || (hour >0 && hour<5)){
+				return "Good Evening :)"
+					}
+			}
+		document.getElementById("m1").innerHTML=time()
+	</script>
+
+</body>
+</html>
